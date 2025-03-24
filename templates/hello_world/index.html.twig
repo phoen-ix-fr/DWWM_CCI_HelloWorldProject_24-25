@@ -7,7 +7,9 @@
 
 <div class="example-wrapper">
 
-    {{ title("Hello " ~ controller_name ~ "! ✅") }}
+    {% set title = "Hello " ~ controller_name ~ "! ✅" %}
+
+    {{ title(title|custom_capitalize) }}
     {{ subtitle("Sous-titre") }}
 
     <img src="{{ asset('images/picture.webp') }}">
