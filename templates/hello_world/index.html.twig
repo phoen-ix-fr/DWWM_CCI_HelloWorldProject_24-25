@@ -7,13 +7,18 @@
 
 <div class="example-wrapper">
 
+    {# Pour la visibiltié, on créé une variable "title" #}
     {% set title = "Hello " ~ controller_name ~ "! ✅" %}
 
+    {# On applique notre modificateur personnalisé sur la variable #}
     {{ title(title|custom_capitalize) }}
+
     {{ subtitle("Sous-titre") }}
 
+    {# Affiche une image se trouvant dans les asset #}
     <img src="{{ asset('images/picture.webp') }}">
 
+    {# Appels de notre composant TWIG : BootstrapButton #}
     <twig:BootstrapButton text="Cliquez ici" type="success" />
     <twig:BootstrapButton text="Bouton" isOutlined />
 

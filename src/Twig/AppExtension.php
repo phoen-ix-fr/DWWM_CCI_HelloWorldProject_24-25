@@ -18,11 +18,20 @@ class AppExtension extends AbstractExtension
         ];
     }
 
+    /**
+     * Alterne les majuscules et les minuscules sur une chaine de caractères fournie en paramètre
+     * 
+     * @param string $input Chaine de caractère à modifier
+     * 
+     * @return string Chaine de caractère dont les majuscules et les minuscules sont alternées
+     */
     public function customCapitalize(string $input): string
     {
+        // On met tout en minscule pour débuter
         $output = strtolower($input);
-        $arrOutput = str_split($output);
-        $flag = false;
+        $arrOutput = str_split($output);    //< Nécessaire car on utilise un foreach qui n'accepte que des tableaux
+        
+        $flag = false;                      //< Flag nous indiquant si un espace était présent précédement ou non
 
         foreach($arrOutput as $key => $value)
         {
