@@ -16,6 +16,15 @@
 
     {{ subtitle("Sous-titre") }}
 
+    {# Affichage du tableau des livres #}
+    <ul class="list-group">
+        {% for book in data %}
+        <li class="list-group-item">{{ book }}</li>
+        {% else %}
+        <li class="list-group-item list-group-item-warning">Aucune donnée disponible</li>
+        {% endfor %}
+    </ul>
+
     {# Affiche une image se trouvant dans les asset #}
     <img src="{{ asset('images/picture.webp') }}">
 

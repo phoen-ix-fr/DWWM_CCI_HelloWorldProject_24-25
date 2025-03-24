@@ -13,6 +13,13 @@ final class HelloWorldController extends AbstractController
     {
         return $this->render('hello_world/index.html.twig', [
             'controller_name' => __CLASS__,
+            'data' => [
+                "1984, écrit par George Orwell",
+                "Le Seigneur des Anneaux, écrit par J.R.R. Tolkien",
+                "Dune, écrit par Frank Herbert",
+                "Les Misérables, écrit par Victor Hugo",
+                "Fondation, écrit par Isaac Asimov"
+            ]
         ]);
     }
 }
