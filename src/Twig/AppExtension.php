@@ -25,13 +25,13 @@ class AppExtension extends AbstractExtension
      * 
      * @return string Chaine de caractère dont les majuscules et les minuscules sont alternées
      */
-    public function customCapitalize(string $input): string
+    public function customCapitalize(string $input, bool $firstCapitalized = true): string
     {
         // On met tout en minscule pour débuter
         $output = strtolower($input);
         $arrOutput = str_split($output);    //< Nécessaire car on utilise un foreach qui n'accepte que des tableaux
         
-        $flag = false;                      //< Flag nous indiquant si un espace était présent précédement ou non
+        $flag = !$firstCapitalized;                      //< Flag nous indiquant si un espace était présent précédement ou non
 
         foreach($arrOutput as $key => $value)
         {

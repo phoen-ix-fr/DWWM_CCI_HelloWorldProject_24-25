@@ -12,6 +12,7 @@
 
     {# On applique notre modificateur personnalisé sur la variable #}
     {{ title(title|custom_capitalize) }}
+    {{ title(title|custom_capitalize(false)) }}
 
     {{ subtitle("Sous-titre") }}
 
